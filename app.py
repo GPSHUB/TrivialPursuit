@@ -20,21 +20,21 @@ def home():
     return render_template("index.html")
 
 @app.route("/api/v1.0/login_table")
-def login():
+def login_table():
     session = Session(engine)
     results = login_list.to_dict('records')
-    return jsonify(results)
+    return jsonify(results)    
     session.close()
 
 @app.route("/api/v1.0/scoring_table")
-def scoring():
+def scoring_table():
     session = Session(engine)
     results2 = scoring_list.to_dict('records')
     return jsonify(results2)
     session.close()
 
 @app.route("/api/v1.0/question_table")
-def question():
+def question_table():
     session = Session(engine)
     results3 = question_list.to_dict('records')
     return jsonify(results3)
